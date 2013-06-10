@@ -142,7 +142,7 @@ def DoIt():
 
 	for stackFrame in stackTrace:
 #		print 'level: %d, i_ci: %r, frame: %r' % (stackFrame['level'], stackFrame['i_ci'], stackFrame['frame'])
-		print 'level: %2d, i_ci: %9r (offset: %3r, size: %3r), frame: %r' % (stackFrame['level'], stackFrame['i_ci'], stackFrame['i_ci'] & 0xffff, stackFrame['i_ci'] >> 16, stackFrame['frame'])
+		print 'level: %2d, i_ci: %9r (offset: %3r, size: %3r), frame: %r' % (stackFrame['level'], stackFrame['i_ci'], stackFrame['i_ci'] & 0xffff, stackFrame['i_ci'] >> 16, stackFrame.get('frame', '<n/a>'))
 
 if __name__ == "__main__":
 	DoIt()
